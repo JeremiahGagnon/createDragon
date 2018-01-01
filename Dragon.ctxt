@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Dragon()
+comment0.text=\r\n\ Default\ Constructor\ for\ objects\ of\ class\ Dragon\r\n
+comment1.params=x\ y\ size\ R\ G\ B\ attackType\ dragonText\ fontType
+comment1.target=Dragon(int,\ int,\ int,\ int,\ int,\ int,\ java.lang.String,\ java.lang.String,\ java.awt.Font)
+comment2.params=g
+comment2.target=void\ drawDragon(java.awt.Graphics)
+comment2.text=\r\n\ drawDragon(Graphics\ g)\r\n\ Starting\ of\ drawing,\ complete\ your\ Dragon....\r\n
+comment3.params=g
+comment3.target=void\ attackElement(java.awt.Graphics)
+comment4.params=g
+comment4.target=void\ drawFire(java.awt.Graphics)
+comment5.params=g
+comment5.target=void\ drawWater(java.awt.Graphics)
+comment6.params=g
+comment6.target=void\ drawHealth(java.awt.Graphics)
+comment7.params=g
+comment7.target=void\ dragonSpeak(java.awt.Graphics)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+comment8.text=\r\n\ toString\r\n
+numComments=9

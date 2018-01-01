@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=DragonScenery
+comment0.text=\r\n\ use\ shapes\ to\ draw\ trees\ or\ clouds\r\n\ use\ drawpolygon\ to\ do\ whatever\ shape\ i\ want\r\n\ maybe\ arc\ to\ draw\ tree?\r\n
+comment1.params=
+comment1.target=DragonScenery()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DragonScenery\r\n
+comment2.params=scene
+comment2.target=DragonScenery(java.lang.String)
+comment3.params=g\ panel
+comment3.target=void\ drawScenery(java.awt.Graphics,\ DrawingPanel)
+comment4.params=g\ panel
+comment4.target=void\ sidewalkScene(java.awt.Graphics,\ DrawingPanel)
+comment5.params=g\ panel
+comment5.target=void\ homeScene(java.awt.Graphics,\ DrawingPanel)
+comment6.params=g\ panel
+comment6.target=void\ articScene(java.awt.Graphics,\ DrawingPanel)
+comment7.params=g\ panel
+comment7.target=void\ christmasScene(java.awt.Graphics,\ DrawingPanel)
+comment8.params=y
+comment8.target=java.lang.String\ sampleMethod(int)
+numComments=9
