@@ -16,8 +16,6 @@ public class Dragon
     private int R;
     private int G;
     private int B;
-    private String attackType; 
-    private int dragonHealth;
     private String dragonText;
     private Font fontType;
     
@@ -33,19 +31,15 @@ public class Dragon
         R = 0; // Lines 27-29 are default RGB colors.
         G = 0;
         B = 0;
-        attackType = "Fire";
-        dragonHealth = 3;
         fontType = new Font("TimesRoman", Font.PLAIN, 18);
     }    
-    public Dragon(int x,int y, int size, int R, int G, int B, String attackType, String dragonText, Font fontType){
+    public Dragon(int x,int y, int size, int R, int G, int B, String dragonText, Font fontType){
         this.x = x;
         this.y = y;
         this.size = size;
         this.R = R; // You saw nothing.
         this.G = G;
         this.B = B;
-        this.attackType = attackType;
-        this.dragonHealth = dragonHealth;
         //this.dragonText = dragonTest;
         this.fontType = fontType;
     }
@@ -76,25 +70,6 @@ public class Dragon
         g.fillPolygon(tailArrayX, tailArrayY, 5); //make tail
         g.fillRect(x+size * 25, (y + size*25) + size * 25, size * 10, size * 50); //Draw Leg #1
         g.fillRect((x+size * 25) + size * 50, (y + size*25) + size * 25, size * 10, size * 50); //Draw leg #2
-    }
-    public void attackElement(Graphics g){
-        if(attackType.equals("Fire")) //calls method to draw fire
-            drawFire(g);
-        if(attackType.equals("Water")) //calls method to draw water
-            drawWater(g);
-    }
-    private void drawFire(Graphics g){
-        g.setColor(Color.RED);
-        for(int i = 1; i < size * 4; i++) //fire breath
-            g.fillOval(x + i * -16, y + size * 20, i * 10, i * 10);
-    }
-    private void drawWater(Graphics g){
-        g.setColor(Color.BLUE);
-        for(int i = 1; i < size * 4; i++) //water breath
-            g.fillOval(x + i * -16, y + size * 20, size * i * 2, size * i * 2);
-    }
-    public void drawHealth(Graphics g){ //displays health on top left
-        g.drawString(String.valueOf(dragonHealth), 50, 30);
     }
     public void dragonSpeak(Graphics g){ //textbox with font
         g.drawRect(x - size * 15, y - size * 21, size * 40, size * 8);

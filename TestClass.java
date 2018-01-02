@@ -17,23 +17,38 @@ public class TestClass
        Scanner input = new Scanner(System.in); //new scanner
        System.out.println("Enter a Size");
        final int SIZE = input.nextInt(); //size used throughout the code
-       /*System.out.println("Enter RGB Colors"); //colors depending on the user
+       System.out.println("Enter RGB Colors"); //colors depending on the user
        int R = input.nextInt();
        int G = input.nextInt();
        int B = input.nextInt();
-       */
+       int x = 300;
+       int y = 300;
+       
        Font fontType = new Font("Courier", Font.BOLD, SIZE * 5); //font used for text
        
-       DragonScenery boop = new DragonScenery("Artic"); //draws scenery for panel
+       DragonScenery boop = new DragonScenery("Home"); //draws scenery for panel
        boop.drawScenery(g, panel);
        
-       /*Dragon sarah = new Dragon(300, 300, SIZE, R, G, B, "Fire", "Hello, World!", fontType); //makes a new dragon called sarah with parameters different from default
+       Dragon sarah = new Dragon(x, y, SIZE, R, G, B, "Hello, World!", fontType); //makes a new dragon called sarah with parameters different from default
        sarah.drawDragon(g); //draws dragon
-       sarah.dragonSpeak(g);//text box
-       sarah.attackElement(g); //depending on the element, it will be that type of attack
-       sarah.drawHealth(g);//draws a number in the top left
-       */
-      ArrayList <Dragon> numDragons = new ArrayList<Dragon>(); //makes a new arraylist called numDragons 
+       //sarah.dragonSpeak(g);//text box
+       //sarah.attackElement(g); //depending on the element, it will be that type of attack
+       dragonAction userInput = new dragonAction("Fire", 5, SIZE, x, y, fontType);
+       System.out.println("Please enter what you want to do.");
+       System.out.println("'A' for Attack\n'E' for eating\n'Q' to quit");
+       char userAction = input.next().charAt(0);
+       while(userAction != ('Q')){
+           if(userAction == ('A'))
+                userInput.attackElement(g);
+           if(userAction == ('E'))
+                userInput.drawHealth(g);
+           if(userAction == ('Q')){
+               System.out.println("You have quitted.");
+               break;
+           }
+       }
+       
+      /*ArrayList <Dragon> numDragons = new ArrayList<Dragon>(); //makes a new arraylist called numDragons 
       System.out.println("How many dragons would you like to print?");
       Dragon beep = new Dragon(); //asks how many dragons user wants to create
       int num = 0;
@@ -46,6 +61,6 @@ public class TestClass
       for(int i = 0; i < numDragons.size() - 1; i++){
           numDragons.get(i).drawDragon(g);
           numDragons.get(i).dragonSpeak(g);
-      }
+      }*/
     }
 }

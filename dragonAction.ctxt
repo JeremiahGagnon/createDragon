@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=dragonAction
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ dragonAction\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=dragonAction()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ dragonAction\r\n
+comment2.params=attackType\ dragonHealth\ size\ x\ y\ fontType
+comment2.target=dragonAction(java.lang.String,\ int,\ int,\ int,\ int,\ java.awt.Font)
+comment3.params=g
+comment3.target=void\ attackElement(java.awt.Graphics)
+comment4.params=g
+comment4.target=void\ drawFire(java.awt.Graphics)
+comment5.params=g
+comment5.target=void\ drawWater(java.awt.Graphics)
+comment6.params=g
+comment6.target=void\ drawHealth(java.awt.Graphics)
+comment7.params=y
+comment7.target=int\ sampleMethod(int)
+comment7.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+numComments=8
