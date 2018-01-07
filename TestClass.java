@@ -25,15 +25,24 @@ public class TestClass
        int y = 300;
        
        Font fontType = new Font("Courier", Font.BOLD, SIZE * 5); //font used for text
-       
-       DragonScenery boop = new DragonScenery("Home"); //draws scenery for panel
+       String scenery = "Home";
+       DragonScenery boop = new DragonScenery(scenery); //draws scenery for panel
        boop.drawScenery(g, panel);
+       Color sceneryColor = new Color(0,0,0);
+       if(scenery.equals("Home"))
+            sceneryColor = new Color(90, 165, 255);
+       if(scenery.equals("Sidewalk"))
+            sceneryColor = new Color(90,165,255);
+       if(scenery.equals("Christmas"))
+            sceneryColor = new Color(146, 242, 229);
+       if(scenery.equals("Artic"))
+            sceneryColor = new Color(135,255,243);
        
        Dragon sarah = new Dragon(x, y, SIZE, R, G, B, "Hello, World!", fontType); //makes a new dragon called sarah with parameters different from default
        sarah.drawDragon(g); //draws dragon
        //sarah.dragonSpeak(g);//text box
        //sarah.attackElement(g); //depending on the element, it will be that type of attack
-       dragonAction userInput = new dragonAction("Fire", 5, SIZE, x, y, fontType);
+       dragonAction userInput = new dragonAction("Fire", 1, SIZE, x, y, fontType, sceneryColor);
        System.out.println("Please enter what you want to do.");
        System.out.println("'A' for Attack\n'E' for eating\n'Q' to quit");
        char userAction = input.next().charAt(0);
@@ -43,11 +52,20 @@ public class TestClass
            if(userAction == ('E'))
                 userInput.drawHealth(g);
            if(userAction == ('Q')){
-               System.out.println("You have quitted.");
-               break;
+               System.out.println("Quitting.");
+               for(int i = 0; i < 5; i++){
+                   try{
+                       Thread.sleep(1000);
+                       System.out.print(".");
+                    }
+                    catch (InterruptedException ie){
+                       ie.printStackTrace();
+                    }
+               }
+               System.out.println("Quitting successful."); 
            }
+           userAction = input.next().charAt(0);
        }
-       
       /*ArrayList <Dragon> numDragons = new ArrayList<Dragon>(); //makes a new arraylist called numDragons 
       System.out.println("How many dragons would you like to print?");
       Dragon beep = new Dragon(); //asks how many dragons user wants to create

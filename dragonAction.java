@@ -6,15 +6,16 @@ import java.awt.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class dragonAction
+public class dragonAction extends TestClass
 {
     // instance variables - replace the example below with your own
     private String attackType;
-    private int dragonHealth;
+    private int totalHealth;
     private int size;
     private int x;
     private int y;
     private Font fontType;
+    private Color sceneryColor;
 
     /**
      * Constructor for objects of class dragonAction
@@ -23,20 +24,23 @@ public class dragonAction
     {
         // initialise instance variables
         attackType = "Fire";
-        dragonHealth = 3;
+        totalHealth = 0;
         size = 2;
         x = 300;
         y = 300;
         fontType = new Font("TimesRoman", Font.PLAIN, 18);
+        sceneryColor = new Color(0,0,0);
     }
-    public dragonAction(String attackType, int dragonHealth, int size, int x, int y, Font fontType){
+    public dragonAction(String attackType, int totalHealth, int size, int x, int y, Font fontType, Color sceneryColor){
         this.attackType = attackType;
-        this.dragonHealth = dragonHealth;
+        this.totalHealth = totalHealth;
         this.size = size;
         this.x = x;
         this.y = y;
         this.fontType = fontType;
+        this.sceneryColor = sceneryColor;
     }
+    
     public void attackElement(Graphics g){
         if(attackType.equals("Fire")) //calls method to draw fire
             drawFire(g);
@@ -68,24 +72,19 @@ public class dragonAction
             catch (InterruptedException ie){
                 ie.printStackTrace();
             }
-            if(i == size * 4 - 1){
-                try{
-                    Thread.sleep(3000); //wait 3 seconds
-                } 
-                catch (InterruptedException ie){
-                    ie.printStackTrace(); 
-                }
-            }
         }
         return;
     }
     public void drawHealth(Graphics g){ //displays health on top left
+        g.setColor(sceneryColor); //sets color to background color
+        g.fillRect(50, 5, 100, 100); //covers the old drawstring
         g.setFont(fontType);
         g.setColor(Color.BLACK);
-        dragonHealth++;
-        g.drawString("Health: " + String.valueOf(dragonHealth), 50, 30);
+        DragonSnack poob = new DragonSnack(); //make a new variable for our subclass
+        totalHealth += poob.chooseSnack(); //whatever choosesnack returns adds onto totalHealth
+        g.drawString("Health: " + totalHealth, 50, 30); //prints out health
         return;
-    }
+    }                               
 
     /**
      * An example of a method - replace this comment with your own
