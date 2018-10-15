@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 /**
- * Write a description of class Dragon here.
+ * Write a description of class Dragon here. So guys we did it
  *
  * @author (your name)
  * @version (a version number or a date)
